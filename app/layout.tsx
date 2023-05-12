@@ -1,7 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Roboto } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] })
+const roboto_medium = Roboto({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-roboto-medium',
+});
 
 export const metadata = {
   title: 'Blog App NextJS',
@@ -15,7 +19,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${roboto_medium.variable} font-medium min-w-screen min-h-screen w-full h-full m-0 p-0 flex flex-col justify-start items-center`}>
+        {children}
+      </body>
     </html>
   )
 }
